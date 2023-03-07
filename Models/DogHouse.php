@@ -1,12 +1,13 @@
 <?php
 require_once __DIR__.'/Product.php';
+require_once __DIR__.'../../Traits/type.php';
 
 class DogHouse extends Product {
     public $width;
     public $height;
     public $color;
     public $material;
-    public $type;
+    use Type;
 
     function __construct($_name, $_price, $_quantity, $_category, $_width, $_height, $_color, $_material) {
 

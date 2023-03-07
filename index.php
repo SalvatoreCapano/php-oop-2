@@ -10,49 +10,49 @@ require_once __DIR__ . '/Models/DogHouse.php';
 // $productOne->shodData();
 // var_dump($productOne);
 
-$productOne = new Food('productOne', 39, 20, new Category ('cat'), '100g', 4, 43, 35);
+$productOne = new Food('productOne', 39, 20, new Category('cat'), '100g', 4, 43, 35);
 // $productOne->shodData();
 
-$productTwo = new Toy('productTwo', 39, 20, new Category ('dog'), '100g', 4, 43, 35);
+$productTwo = new Toy('productTwo', 39, 20, new Category('dog'), '100g', 4, 43, 35);
 // $productTwo->shodData();
 
-$productThree = new DogHouse('productThree', 39, 20, new Category ('dog'), 150, 150, 'brown', 'wood');
+$productThree = new DogHouse('productThree', 39, 20, new Category('dog'), 150, 150, 'brown', 'wood');
 // $productThree->shodData();
 
-$productFour = new Food('productFour', 39, 20, new Category ('cat'), '100g', 4, 43, 35);
+$productFour = new Food('productFour', 39, 20, new Category('cat'), '100g', 4, 43, 35);
 // $productFour->shodData();
 
-$productFive = new Toy('productFive', 39, 20, new Category ('dog'), '100g', 4, 43, 35);
+$productFive = new Toy('productFive', 39, 20, new Category('dog'), '100g', 4, 43, 35);
 // $productFive->shodData();
 
-$productSix = new DogHouse('productSix', 39, 20, new Category ('dog'), 150, 150, 'brown', 'wood');
+$productSix = new DogHouse('productSix', 39, 20, new Category('dog'), 150, 150, 'brown', 'wood');
 // $productSix->shodData();
 
-$productSeven = new Food('productSeven', 39, 20, new Category ('cat'), '100g', 4, 43, 35);
+$productSeven = new Food('productSeven', 39, 20, new Category('cat'), '100g', 4, 43, 35);
 // $productSeven->shodData();
 
-$productEight = new Toy('productEight', 39, 20, new Category ('dog'), '100g', 4, 43, 35);
+$productEight = new Toy('productEight', 39, 20, new Category('dog'), '100g', 4, 43, 35);
 // $productEight->shodData();
 
-$productNine = new DogHouse('productNine', 39, 20, new Category ('dog'), 150, 150, 'brown', 'wood');
+$productNine = new DogHouse('productNine', 39, 20, new Category('dog'), 150, 150, 'brown', 'wood');
 // $productNine->shodData();
 
-$productTen = new Food('productTen', 39, 20, new Category ('cat'), '100g', 4, 43, 35);
+$productTen = new Food('productTen', 39, 20, new Category('cat'), '100g', 4, 43, 35);
 // $productTen->shodData();
 
-$productEleven = new Toy('productEleven', 39, 20, new Category ('dog'), '100g', 4, 43, 35);
+$productEleven = new Toy('productEleven', 39, 20, new Category('dog'), '100g', 4, 43, 35);
 // $productEleven->shodData();
 
-$productTwelve = new DogHouse('productTwelve', 39, 20, new Category ('dog'), 150, 150, 'brown', 'wood');
+$productTwelve = new DogHouse('productTwelve', 39, 20, new Category('dog'), 150, 150, 'brown', 'wood');
 // $productTwelve->shodData();
 
-$productThirteen = new Food('productThirteen', 39, 20, new Category ('cat'), '100g', 4, 43, 35);
+$productThirteen = new Food('productThirteen', 39, 20, new Category('cat'), '100g', 4, 43, 35);
 // $productThirteen->shodData();
 
-$productFourteen = new Toy('productFourteen', 39, 20, new Category ('dog'), '100g', 4, 43, 35);
+$productFourteen = new Toy('productFourteen', 39, 20, new Category('dog'), '100g', 4, 43, 35);
 // $productFourteen->shodData();
 
-$productFifteen = new DogHouse('productFifteen', 39, 20, new Category ('dog'), 150, 150, 'brown', 'wood');
+$productFifteen = new DogHouse('productFifteen', 39, 20, new Category('dog'), 150, 150, 'brown', 'wood');
 // $productFifteen->shodData();
 
 $productsList[] = $productOne;
@@ -75,6 +75,7 @@ $productsList[] = $productFifteen;
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -87,39 +88,52 @@ $productsList[] = $productFifteen;
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <header>
         <h1>Animals Products Shop</h1>
-        <img src="" alt="">
+
+        <div class="actions">
+            <a href="">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Shopping Cart
+            </a>
+
+            <a href="./login.php">
+                <i class="fa-solid fa-user"></i>
+                Account
+            </a>
+        </div>
     </header>
 
     <main class="container">
         <div class="cardsContainer">
             <ul>
-                <?php 
-                    foreach ($productsList as $product) {
-                        echo '<li>';
+                <?php
+                foreach ($productsList as $product) {
+                    echo '<li>';
 
-                            echo '<div class="imgContainer">';
-                                echo '<img src="' . $product->imgUrl . '" alt="Product">';
-                            echo '</div>';
+                    echo '<div class="imgContainer">';
+                    echo '<img src="' . $product->imgUrl . '" alt="Product">';
+                    echo '</div>';
 
-                            echo '<h3>' . $product->name . '</h3>';
+                    echo '<h3>' . $product->name . '</h3>';
 
-                            echo '<span>' . $product->price . ' $' . '</span>';
+                    echo '<span>' . $product->price . ' $' . '</span>';
 
-                            echo '<p>';
-                                echo '<i class="fa-solid fa-' . $product->category->category . '"></i>';
-                                echo $product->type;
-                            echo '</p>';
+                    echo '<p>';
+                    echo '<i class="fa-solid fa-' . $product->category->category . '"></i>';
+                    echo $product->type;
+                    echo '</p>';
 
-                        echo '</li>';
-                    }
+                    echo '</li>';
+                }
                 ?>
             </ul>
         </div>
     </main>
-    
+
 </body>
+
 </html>
